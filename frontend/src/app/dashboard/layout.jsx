@@ -7,6 +7,7 @@ function layout({children}) {
     const [expense, setExpense] = useState
     ([]);
   return (
+    
     // <div className='min-h-screen w-full dark:text-white dark:bg-black  bg-white text-black flex'>
     //        {/* <p className='border'>Sidebar</p> */}
     //        {/* <Sidebar/> */}
