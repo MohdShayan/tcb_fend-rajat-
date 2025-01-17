@@ -42,13 +42,13 @@ const Page = () => {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen bg-gray-100">
+    <div className="flex items-center justify-center h-screen bg-gray-100 dark:bg-black">
       <form
         onSubmit={handleSubmit}
         className="w-full max-w-md p-8 bg-white border rounded shadow-lg"
       >
-        <h2 className="mb-6 text-2xl font-semibold text-center">Login</h2>
-        <div className="mb-4">
+        <h2 className="mb-6 text-2xl font-semibold text-center dark:text-black">Login</h2>
+        <div className="mb-4 dark:text-black">
           <label htmlFor="email" className="block mb-2 text-sm font-medium">
             Email:
           </label>
@@ -58,10 +58,10 @@ const Page = () => {
             name="email"
             value={loginData.email}
             onChange={handleChange}
-            className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-black focus:ring-2"
+            className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-black focus:ring-2 dark:bg-white"
           />
         </div>
-        <div className="mb-6">
+        <div className="mb-6 dark:text-black">
           <label htmlFor="password" className="block mb-2 text-sm font-medium ">
             Password:
           </label>
@@ -71,7 +71,7 @@ const Page = () => {
             name="password"
             value={loginData.password}
             onChange={handleChange}
-            className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-black focus:ring-2"
+            className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-black focus:ring-2 dark:bg-white"
           />
         </div>
         <button

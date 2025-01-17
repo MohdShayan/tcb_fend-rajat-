@@ -1,15 +1,14 @@
 "use client";
 
 import { useContext, useState } from "react";
-import axios from "axios";
-import { useRouter } from "next/navigation";
+//import { useRouter } from "next/navigation";
 import ToggleButton from "../../components/_components/Toggle";
 import { Button } from "@/components/ui/button";
 import { ExpenseContext } from "../../components/context/Expensecontext";
 import { toast } from "sonner";
 
 const ExpenseForm = () => {
-  const router = useRouter();
+  //const router = useRouter();
   const [expenseD, setExpenseD] = useState();
   const {expense,setExpense}=useContext(ExpenseContext)
   console.log(expense);
@@ -20,7 +19,7 @@ const ExpenseForm = () => {
     const { name, value } = e.target;
     setExpenseD((prevState) => ({
       ...prevState,
-      [name]: value,
+      [name]: value,  
     }));
     console.log(expense);
     
