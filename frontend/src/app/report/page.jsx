@@ -32,8 +32,8 @@ const Report=()=>{
     return(
         <div>
             <div className="flex justify-between">
-                <h1 className="text-4xl">Reports & Analysis</h1>
-                <div className="flex gap-2">
+                <h1 className="sm:text-4xl ">Reports & Analysis</h1>
+                <div className="flex gap-4 items-center">
                     <ToggleButton/>
                     <button className="text-sm border border-black p-2 rounded text-center dark:border-white">Export CSV</button>
                     <button className="text-sm border border-black p-2 rounded text-center dark:border-white">Import CSV</button>
@@ -57,7 +57,7 @@ const Report=()=>{
                         </div>
                     ))}
                 </div>
-                <div className="flex h-10">
+                <div className="flex h-10 gap-2 ">
                     <select value={month}
                         onChange={(e)=>setMonth(e.target.value)}
                         className="p-2 rounded border border-black dark:border-white text-sm">

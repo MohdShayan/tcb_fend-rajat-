@@ -12,7 +12,9 @@ import {
   UsersRound,
   Settings,
   ChevronRight,
-  Database
+  Database,
+  BarChart,
+  Wallet
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -60,13 +62,13 @@ export default function Sidebar({}) {
           {
             title: "Budget Management",
             href: "/budgetPlan",
-            icon: LayoutDashboard,
+            icon: Wallet,
             variant: "ghost"
           },
           {
             title: "Reports & Analysis",
             href: "/report",
-            icon: LayoutDashboard,
+            icon: BarChart,
             variant: "ghost"
           },
           {

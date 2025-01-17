@@ -58,7 +58,7 @@ const ExpenseForm = () => {
    </div>
     <div className="p-6 m-5 bg-white dark:bg-[#2b2a2a] shadow-lg rounded-lg">
        
-      <h1 className="text-3xl dark:text-zinc-500  font-semibold text-center mb-6">Expense Form</h1>
+      <h1 className="text-3xl dark:text-zinc-100 font-semibold text-center mb-6">Expense Form</h1>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <label className="block text-gray-700 dark:text-white font-medium">Title:</label>

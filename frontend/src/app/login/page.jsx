@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
+import ToggleButton from "../components/_components/Toggle";
 
 const Page = () => {
   const router = useRouter();
@@ -42,7 +43,14 @@ const Page = () => {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen bg-gray-100 dark:bg-black">
+    <div>
+      <div className="flex justify-between items-center dark:text-white py-2">
+        <div >
+          <h1 className="text-3xl text-center  font-bold text-zinc-600 dark:text-white">Your One And Only Expense Tracker </h1>
+        </div>
+        <ToggleButton/>
+      </div>
+      <div className="flex items-center justify-center h-screen bg-gray-100 dark:bg-black">
       <form
         onSubmit={handleSubmit}
         className="w-full max-w-md p-8 bg-white border rounded shadow-lg"
@@ -82,6 +90,7 @@ const Page = () => {
         </button>
         {message && <p className="mt-4 text-center">{message}</p>}
       </form>
+    </div>
     </div>
   );
 };
