@@ -17,6 +17,7 @@ import {
 import { Button } from "@/components/ui/button";
 
 import { useWindowWidth } from "@react-hook/window-size";
+import Dashboard from "../dashboard/page";
 
 export default function Sidebar({}) {
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -56,7 +57,18 @@ export default function Sidebar({}) {
             icon: Database,
             variant: "ghost"
           },
-         
+          {
+            title: "Budget Management",
+            href: "/budgetPlan",
+            icon: LayoutDashboard,
+            variant: "ghost"
+          },
+          {
+            title: "Reports & Analysis",
+            href: "/report",
+            icon: LayoutDashboard,
+            variant: "ghost"
+          },
           {
             title: "Profile",
             href: "/login",

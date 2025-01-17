@@ -12,7 +12,7 @@ import { ExpenseContext } from "../components/context/Expensecontext";
 const cardData = [
   {
     label: "Current Balance",
-    amount: "$45,231.89",
+    amount: "45,231.89",
     // discription: "+20.1% from last month",
     icon: DollarSign
   },
@@ -38,19 +38,19 @@ const cardData = [
 const sampleExpenses = [
   {
     title: "Groceries",
-    amount: "+$120",
+    amount: "+120",
     category: "Food",
     date: "2025-01-01",
   },
   {
     title: "Electricity Bill",
-    amount: "+$75",
+    amount: "+75",
     category: "Utilities",
     date: "2024-12-30",
   },
   {
     title: "Gym Membership",
-    amount: "+$50",
+    amount: "+50",
     category: "Health",
     date: "2024-12-28",
   },
