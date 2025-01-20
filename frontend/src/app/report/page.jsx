@@ -43,8 +43,8 @@ const Report=()=>{
             <div className="mt-10 grid grid-cols-1 sm:grid-cols-2">
                 <div className="mr-5">
                     <h2 className="text-xl mb-2">Spending Trends</h2>
-                    {trendData.map((trend)=>(
-                        <div className="text-sm flex justify-between rounded border border-black dark:bg-zinc-900 p-2 mb-2">
+                    {trendData.map((trend,index)=>(
+                        <div key={index} className="text-sm flex justify-between rounded border border-black dark:bg-zinc-900 p-2 mb-2">
                             <div>
                                 {trend.category}
                                 {trend.isIncrease && <p>{trend.change}% increase from last month</p>}

@@ -3,6 +3,7 @@
 import React, { useEffect } from 'react'
 import { useTheme } from "next-themes";
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
+import T from '../T';
 
 
 const ToggleButton = () => {
@@ -14,10 +15,9 @@ const ToggleButton = () => {
     })
     return (
       
-        <DarkModeSwitch
-        checked={isDarkMode}
-        onChange={ () => theme == "dark"? setTheme('light'): setTheme("dark")}
-        />
+        // <DarkModeSwitch>
+            <T/>
+        // </DarkModeSwitch>
     )
 }
 
