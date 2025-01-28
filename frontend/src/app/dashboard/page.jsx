@@ -5,8 +5,9 @@ import Card, { CardContent } from "../components/Card";
 import BarChart from "../components/BarChart";
 import SalesCard from "../components/SalesCard";
 import ToggleButton from "../components/_components/Toggle";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ExpenseContext } from "../components/context/Expensecontext";
+import axios from "axios";
 
 
 const cardData = [
@@ -57,18 +58,41 @@ const sampleExpenses = [
 ];
 
 
+
 export default function Dashboard() {
+
+  const [expData, setExpData] = useState([]);
 
   
   const {expense,setExpense}=useContext(ExpenseContext)
-  // useEffect(()=>{
-  //   const total=0
-  //   expense.map((d)=>{
-  //     total+=d.amount
-  //   })
-  //   cardData[2].amount=total
-  // },[])
-  console.log(expense);
+
+  useEffect(() => {
+    const getRecentExpList = async () => {
+      try {
+        const response = await axios.get("http://localhost:3001/expense", {
+          withCredentials: true,
+        });
+  
+        console.log("Recent expenses:", response.data); // Check the response data
+        if (Array.isArray(response.data)) {
+          setExpData(response.data);
+          console.log(expData); // Store the response in `expData`
+        } else {
+          console.error("Response is not an array");
+        }
+      } catch (error) {
+        console.error("Failed to fetch recent expenses:", error);
+      }
+    };
+  
+    getRecentExpList(); // Fetch data on component mount
+  }, []);
+
+  useEffect(() => {
+    console.log("Updated expData:", expData);
+  }, [expData]);
+  
+  
   return (
     <div className="flex flex-col gap-5  w-full">
      <div className="flex justify-between">
@@ -93,16 +117,18 @@ export default function Dashboard() {
           <BarChart />
         </CardContent>
         <CardContent className="flex justify-between gap-4">
+
+
           <section>
             <p>Recent Expenses</p>
           
           </section>
-          {sampleExpenses.map((d, i) => (
+          {expData.map((data, index) => (
             <SalesCard
-              key={i}
-              title={d.title}
-              category={d.category}
-              saleAmount={d.amount}
+              key={index}
+              title={data.title}
+              category={data.category}
+              saleAmount={data.amount}
             />
           ))}
           {

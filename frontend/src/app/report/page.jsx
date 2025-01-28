@@ -26,7 +26,7 @@ const Report=()=>{
         }
     ];
 
-    const[month, setMonth] = useState("");
+    const[month, setMonth] = useState("January");
     const months = ["January", "February","March", "April","May","June", "July","August", "September", "August", "October", "November","December"];
 
     return(

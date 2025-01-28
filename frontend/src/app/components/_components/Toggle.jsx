@@ -1,6 +1,6 @@
-
 "use client";
-import React, { useEffect } from 'react'
+
+import React, { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
 import T from '../T';
@@ -21,4 +21,4 @@ const ToggleButton = () => {
     )
 }
 
-export default ToggleButton
+export default ToggleButton;

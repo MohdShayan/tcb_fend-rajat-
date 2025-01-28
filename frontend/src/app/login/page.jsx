@@ -19,21 +19,21 @@ const Page = () => {
     console.log("Email:", loginData.email);
     console.log("Password:", loginData.password);
 
-    // Basic validation (optional but recommended)
+   
     if (!loginData.email || !loginData.password) {
       setMessage("Please fill in both fields.");
       return;
     }
 
     try {
-      // const response = await axios.post(
-      //   "http://localhost:3000/user/login",
-      //   loginData,
-      //   { withCredentials: true }
-      // );
-      // console.log(response);
-      // setMessage("Login successful!");
-      router.push("/pages/dashboard"); // Using Next.js router for navigation
+      const response = await axios.post(
+        "http://localhost:3001/user/login",
+        loginData,
+        { withCredentials: true }
+      );
+      console.log(response);
+      setMessage("Login successful!");
+      router.push("/dashboard"); 
     } catch (error) {
       console.log(error);
       setMessage("Login failed. Please try again.");
